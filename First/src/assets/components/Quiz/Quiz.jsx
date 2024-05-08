@@ -11,11 +11,16 @@ const Quiz = () => {
   const [showSubmit, setShowSubmit] = useState(false);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [showResult, setShowResult] = useState(false);
+  const [correctAnswerIndex, setCorrectAnswerIndex] = useState(null);
 
   const totalQuestions = QuestionData[selectedSubject]?.length || 0;
 
-  const handleSubjectSelect = (subject) => {
-    setSelectedSubject(subject);
+  const handleSubjectSelect = (optionIndex) => {
+    // If an option is already selected or answer has been submitted, return
+    if (selectedOption !== null || answerStatus !== null) {
+      return;
+    }
+    setSelectedSubject(optionIndex);
     setCurrentQuestionIndex(0);
     setSelectedOption(null);
     setIsOptionDisabled(false);
@@ -44,21 +49,47 @@ const Quiz = () => {
   };
 
   const checkAnswer = () => {
-    const correctAnswerIndex =
-      QuestionData[selectedSubject][currentQuestionIndex].correctAnswer;
-    if (selectedOption === correctAnswerIndex) {
-      setAnswerStatus("correct");
+    const currentQuestion = QuestionData[selectedSubject][currentQuestionIndex];
+    const correctAnswerIndex = currentQuestion.options.findIndex(
+      (option) => option === currentQuestion.correctAnswer
+    );
+
+    const isCorrect = selectedOption === correctAnswerIndex;
+
+    setAnswerStatus(isCorrect ? "correct" : "incorrect");
+
+    if (isCorrect) {
       setCorrectAnswers(correctAnswers + 1); // Increment correct answers
-    } else {
-      setAnswerStatus("incorrect");
     }
+
     setIsOptionDisabled(true); // Disable options after submission
     setShowSubmit(false); // Hide the submit button
-    setTimeout(moveToNextQuestion, 1000); // Move to next question after 1 second
+    setTimeout(moveToNextQuestion, 600); // Move to next question after 1 second
   };
 
+  const handleTryAgain = () => {
+    setSelectedSubject(null);
+    setCurrentQuestionIndex(0);
+    setSelectedOption(null);
+    setIsOptionDisabled(true);
+    setAnswerStatus(null);
+    setShowSubmit(false);
+    setCorrectAnswers(0);
+    setShowResult(false);
+    setCorrectAnswerIndex(null);
+  };
   return (
+    <>
     <div className="container">
+    {showResult ? (
+      <div className="result-container">
+      <h2>
+      You scored {correctAnswers} out of {totalQuestions}.
+      </h2>
+      <button onClick={handleTryAgain}>Try Again</button>
+      </div>
+      ) : (
+      <>
       <div className="container-left">
         <span className="thin">
           {!selectedSubject ? (
@@ -111,28 +142,21 @@ const Quiz = () => {
           </div>
         </div>
       )}
-     {selectedSubject && (
+      {selectedSubject && (
         <div className="container-right">
           <div className="container-list">
             {QuestionData[selectedSubject][currentQuestionIndex].options.map(
               (option, index) => {
-                const isCorrect =
-                  index ===
-                  QuestionData[selectedSubject][currentQuestionIndex]
-                    .correctAnswer;
                 const isSelected = selectedOption === index;
-                const isIncorrect = isSelected && answerStatus === "incorrect";
+                const isCorrect =
+                  answerStatus === "correct" && selectedOption === index;
+                const isIncorrect =
+                  answerStatus === "incorrect" && selectedOption === index;
 
                 let className = "container-listing";
-                if (isSelected) {
-                  className += " selected";
-                }
-                if (isCorrect && answerStatus === "correct") { // Add condition for correct answer
-                  className += " correct";
-                }
-                if (isIncorrect) {
-                  className += " incorrect";
-                }
+                if (isSelected) className += " selected";
+                if (isCorrect) className += " correct";
+                if (isIncorrect) className += " incorrect";
 
                 return (
                   <div
@@ -158,11 +182,13 @@ const Quiz = () => {
           <h2>
             You scored {correctAnswers} out of {totalQuestions}.
           </h2>
-          <button onClick={() => handleSubjectSelect(null)}>Try Again</button>
+          <button onClick={handleTryAgain}>Try Again</button>
         </div>
       )}
+      </>
+      )}
     </div>
+    </>
   );
-};  
-
+};
 export default Quiz;
