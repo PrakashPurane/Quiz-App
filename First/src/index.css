@@ -8,3 +8,14 @@ body{
     background-image: linear-gradient(234deg, lightgrey -123%, black 100.0%);
 }
 
+
+.app-container {
+    padding: 10px;
+    background-color: lightgray
+    color#3333;
+}
+
+.dark-mode .app-container {
+    background-color: #000000;
+    color: #fff;
+}

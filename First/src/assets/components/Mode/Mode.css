@@ -3,6 +3,7 @@
     justify-content: center;
     margin-top: 2.8rem;
     margin-left: 50rem;
+  
   }
   
   .toggle-btn {
@@ -46,3 +47,10 @@
     transform: translateY(-50%);
     width: 29px;
   }
+  
+  .dark-mode .toggle-menu {
+    background-color: #000000;
+    color: #fff;
+  }
+
+  
