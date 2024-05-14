@@ -9,6 +9,8 @@ const App = () => {
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
+
+  
   return (
     <>
     <div className={`app-container  ${isDarkMode ? 'dark-mode' : ''}`}>
