@@ -152,10 +152,9 @@ const Quiz = ({ isDarkMode }) => {
       <div
         className={isDarkMode ? "dark-mode" : ""}
         onKeyDown={handleKeyDown}
-        tabIndex="0"
+        
       >
-        <div className="container">
-          
+        <div className="container ">
           {showResult ? (
             <div className="result-container app-container">
               <h2>
@@ -234,7 +233,7 @@ const Quiz = ({ isDarkMode }) => {
                   </div>
                 </div>
               )}
-              
+
               {selectedSubject && (
                 <div className="container-right">
                   <div className="container-list">
@@ -269,12 +268,12 @@ const Quiz = ({ isDarkMode }) => {
                   <div className="submit-button">
                     <button
                       ref={submitButtonRef}
-                      className="submit-button"
+                      className="submitt-button"
                       tabIndex="0"
                       onClick={checkAnswer}
                       disabled={isOptionDisabled}
                     >
-                      Submit
+                      <p>Submit</p>
                     </button>
                     {errorMessage && (
                       <p className="error-message">{errorMessage}</p>
@@ -287,7 +286,9 @@ const Quiz = ({ isDarkMode }) => {
                   <h2>
                     You scored {correctAnswers} out of {totalQuestions}.
                   </h2>
-                  <button onClick={handleTryAgain}>Try Again</button>
+                  <button onClick={handleTryAgain}>
+                    Try Again
+                  </button>
                 </div>
               )}
             </>

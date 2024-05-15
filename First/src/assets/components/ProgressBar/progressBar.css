@@ -14,3 +14,9 @@
   border-radius: 10px;
   transition: width 0.3s ease-in-out;
 }
+
+@media (max-width: 486px) {
+  .progress-bar {
+    margin-top: -10rem;
+  }
+}

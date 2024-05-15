@@ -51,3 +51,9 @@
   background-color: #000000;
   color: #fff;
 }
+
+@media (max-width: 486px) {
+  .toggle-menu {
+    margin-left: 17rem;
+  }
+}

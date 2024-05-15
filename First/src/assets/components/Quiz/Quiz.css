@@ -1,7 +1,7 @@
 .container {
   width: 700px;
   margin: auto;
-  height: 90vh;
+  height: 100vh;
   margin-top: 3px;
   /* background: linear-gradient(234deg, lightgrey -123%, black 100%); */
   color: white;
@@ -51,6 +51,7 @@
   padding-left: 3rem;
   padding-right: 47px;
   margin-top: -35px;
+  margin-bottom: 7rem;
   box-shadow: 1px 11px 44px -23px rgba(0, 0, 0, 0.19);
 }
 
@@ -61,13 +62,6 @@
   left: 12px;
 }
 
-/* .selectedsubjectt{
-  font-size: 2rem;
-  font-weight: 700;
-  padding-left: 4.7rem;
-  padding-bottom: 2rem;
-
-} */
 
 i {
   font-size: 1.6rem;
@@ -164,27 +158,27 @@ i {
 }
 
 .result-container {
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   padding-top: 2rem;
   width: 100%;
   height: 100%;
-  gap: 10rem;
+  /* gap: 10rem; */
   position: fixed;
   top: 100px;
   left: 0;
   color: rgb(236, 180, 180);
-  margin-left: 25rem;
+  margin-left: 16rem;
   /* background-color: rgba(83, 80, 80, 0.8); semi-transparent white */
 }
 
 .result-container h2 {
-  min-width: 12rem;
-  font-size: 1.3rem;
-  margin-left: 1rem;
+  min-width: 245px;
+  font-size: 1.4rem;
+  margin-left: 0rem;
   color: #ffff;
-  margin-bottom: 20rem;
+  margin-bottom: 3rem;
 }
 .result-container button {
   font-size: 1rem;
@@ -202,9 +196,65 @@ i {
   color: #fff;
 }
 
-@media (max-width){
-  .container{
+@media (max-width: 486px) {
+  .container {
+    display: block;
+  }
+  .container-left {
+    margin-top: -74px;
+    margin-left: -130px;
+  }
 
-    width: 1000px;
+  .italic {
+    margin-top: -1rem;
+  }
+  .italic i {
+    font-size: 1rem;
+  }
+  .subject-list {
+    margin-top: 37px;
+    margin-left: -196px;
+  }
+  .container-listing {
+    width: 390px;
+  }
+  .container-listing h1 {
+    font-size: 1.2rem;
+  }
+  .question p {
+    font-size: 1.6rem;
+  }
+  .container-right {
+    font-size: 3rem;
+    margin-top: 2px;
+    margin-left: -12rem;
+  }
+  .submit-button {
+    margin-top: -1px;
+  }
+  .submit-button .submitt-button {
+    padding-left: 187px;
+    width: 1px;
+  }
+  .submit-button .submitt-button p {
+    margin-left: -2rem;
+  }
+  button span {
+    padding-left: 2px;
+  }
+  .error-message {
+    margin-top: 9px;
+    margin-left: 82px;
+  }
+  .result-container {
+    display: block;
+    margin-left: -80px;
+    gap: 2;
+  }
+  .result-container h2 {
+    margin-top: -37px;
+  }
+  .result-container button {
+    margin-bottom: 2px;
   }
 }

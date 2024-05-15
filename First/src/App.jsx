@@ -13,8 +13,8 @@ const App = () => {
   return (
     <>
       <div className={`app-container  ${isDarkMode ? "dark-mode" : ""}`}>
-      <div className={`circle ${isDarkMode ? "dark-mode" : ""}`}></div>
-      <div className={`second-circle ${isDarkMode ? "dark-mode" : ""}`}></div>
+        <div className={`circle ${isDarkMode ? "dark-mode" : ""}`}></div>
+        <div className={`second-circle ${isDarkMode ? "dark-mode" : ""}`}></div>
 
         <Mode toggleDarkMode={toggleDarkMode} />
         <Quiz isDarkMode={isDarkMode} />

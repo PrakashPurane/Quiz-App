@@ -1,48 +1,51 @@
 .dark-mode {
-    background-color: #000000;
-    color: #f5e3e3;
-  }
- 
-  
-  .app-container{
-    position: relative;
-    max-height: 500px;
-    /* max-width: 500px; */
-  }
+  background-color: #000000;
+  color: #f5e3e3;
+}
 
-  .circle {
-    position: absolute;
-    width: 1340px;
-    height: 1000px;
-    margin-left: -650px;
-    margin-top: -30%;
-    border: 130px solid rgb(74, 71, 72);
-    border-radius: 50%;
-    z-index: -1;
+.app-container {
+  position: relative;
+  max-height: 500px;
+  /* max-width: 00px; */
+}
 
-  }
+.circle {
+  position: absolute;
+  width: 1340px;
+  height: 1000px;
+  margin-left: -650px;
+  margin-top: -30%;
+  border: 130px solid rgb(74, 71, 72);
+  border-radius: 50%;
+  z-index: -1;
+}
 
-  .second-circle{
+  .second-circle {
     position: absolute;
     width: 1200px;
     height: 1200px;
-    border: 130px solid rgba(74,71,72);
+    border: 130px solid rgba(74, 71, 72);
     border-radius: 50%;
     right: -500px;
     bottom: -1000px;
     z-index: -1;
-  } 
-
-  .app-container.dark-mode .circle  {
-    border-color: #ee0c0c; /* Dark mode border color */
   }
 
-   @media(max-width:486px){
-    .circle{
-      /* width: 100px; */
-      height: 700px;
-      top: -100px;
-      left: -100px;
-    }
-    }
-  
+.app-container.dark-mode .circle {
+  border-color: #000000; /* Dark mode border color */
+}
+
+@media (max-width: 486px) {
+  .app-container {
+    width: 500px;
+  }
+  .circle {
+    width: 1100px;
+    height: 1310px;
+    top: -610px;
+    left: -10px;
+  }
+  .second-circle {
+    right: -1200px;
+  }
+}
