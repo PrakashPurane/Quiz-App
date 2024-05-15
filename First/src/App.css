@@ -1,9 +1,48 @@
 .dark-mode {
     background-color: #000000;
-    color: #fff;
+    color: #f5e3e3;
   }
+ 
   
-  /* .light-mode {
-    background-color: #f0f0f0;
-    color: #333;
-  } */
+  .app-container{
+    position: relative;
+    max-height: 500px;
+    /* max-width: 500px; */
+  }
+
+  .circle {
+    position: absolute;
+    width: 1340px;
+    height: 1000px;
+    margin-left: -650px;
+    margin-top: -30%;
+    border: 130px solid rgb(74, 71, 72);
+    border-radius: 50%;
+    z-index: -1;
+
+  }
+
+  .second-circle{
+    position: absolute;
+    width: 1200px;
+    height: 1200px;
+    border: 130px solid rgba(74,71,72);
+    border-radius: 50%;
+    right: -500px;
+    bottom: -1000px;
+    z-index: -1;
+  } 
+
+  .app-container.dark-mode .circle  {
+    border-color: #ee0c0c; /* Dark mode border color */
+  }
+
+   @media(max-width:486px){
+    .circle{
+      /* width: 100px; */
+      height: 700px;
+      top: -100px;
+      left: -100px;
+    }
+    }
+  

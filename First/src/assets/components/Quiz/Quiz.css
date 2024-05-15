@@ -1,6 +1,7 @@
 .container {
   width: 700px;
   margin: auto;
+  height: 90vh;
   margin-top: 3px;
   /* background: linear-gradient(234deg, lightgrey -123%, black 100%); */
   color: white;
@@ -15,7 +16,6 @@
   margin-left: -4rem;
   /* width: 800px; */
   max-height: 350px;
-  
 }
 
 .container-left span {
@@ -54,6 +54,13 @@
   box-shadow: 1px 11px 44px -23px rgba(0, 0, 0, 0.19);
 }
 
+.selectedsubjectt {
+  font-size: 1.8rem;
+  position: absolute;
+  top: -160px;
+  left: 12px;
+}
+
 /* .selectedsubjectt{
   font-size: 2rem;
   font-weight: 700;
@@ -69,12 +76,12 @@ i {
 }
 
 .thin .question {
- 
   margin-top: -2.1rem;
   /* font-size: 2rem; */
   text-align: left;
   line-height: 2.6rem;
   /* max-height: 120%; */
+  position: relative;
 }
 
 .question p {
@@ -156,8 +163,6 @@ i {
   background-color: #f60d0d; /* Light red */
 }
 
-
-
 .result-container {
   display: flex;
   justify-content: center;
@@ -170,11 +175,13 @@ i {
   top: 100px;
   left: 0;
   color: rgb(236, 180, 180);
+  margin-left: 25rem;
   /* background-color: rgba(83, 80, 80, 0.8); semi-transparent white */
 }
 
 .result-container h2 {
-  font-size: 1.8rem;
+  min-width: 12rem;
+  font-size: 1.3rem;
   margin-left: 1rem;
   color: #ffff;
   margin-bottom: 20rem;
@@ -186,11 +193,18 @@ i {
   border-radius: 2rem;
   background-color: #06ff06;
   margin-bottom: 20rem;
-  margin-left: -2 rem;
+  margin-left: 2rem;
   cursor: pointer;
 }
 
 .dark-mode {
   background-color: #000000;
   color: #fff;
+}
+
+@media (max-width){
+  .container{
+
+    width: 1000px;
+  }
 }

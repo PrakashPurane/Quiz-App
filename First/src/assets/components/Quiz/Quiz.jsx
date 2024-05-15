@@ -155,6 +155,7 @@ const Quiz = ({ isDarkMode }) => {
         tabIndex="0"
       >
         <div className="container">
+          
           {showResult ? (
             <div className="result-container app-container">
               <h2>
@@ -164,7 +165,7 @@ const Quiz = ({ isDarkMode }) => {
             </div>
           ) : (
             <>
-              <div className="container-left" app-container>
+              <div className="container-left">
                 <span className="thin">
                   {!selectedSubject ? (
                     <>
@@ -176,7 +177,9 @@ const Quiz = ({ isDarkMode }) => {
                   ) : (
                     <>
                       <div className="question">
-                        {/* <div className="selectedsubjectt">{selectedSubject}</div> */}
+                        <div className="selectedsubjectt">
+                          {selectedSubject}
+                        </div>
                         <i>Questions {currentQuestionIndex + 1} of 5</i>
                         <p>
                           {
@@ -231,6 +234,7 @@ const Quiz = ({ isDarkMode }) => {
                   </div>
                 </div>
               )}
+              
               {selectedSubject && (
                 <div className="container-right">
                   <div className="container-list">
